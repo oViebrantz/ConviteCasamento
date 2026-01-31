@@ -64,18 +64,40 @@ st.markdown("""
         border-radius: 10px;
     }
             
-    [data-testid="stAppViewContainer"] {
-        background-image: url("https://static.vecteezy.com/system/resources/thumbnails/023/402/460/original/watercolor-beautiful-floral-bloom-animation-of-colorful-flowers-banner-animated-4k-blooming-flowers-background-frame-loop-video.jpg");
-        background-position: center;
-        background-repeat: no-repeat;
-        background-size: cover;
-        min-height: 100vh;
+    html, body {
+        width: 100%;
+        height: 100%;
+        margin: 0;
+        padding: 0;
+        overflow-x: hidden;
     }
+    
+    /* Container principal do app */
+    [data-testid="stAppViewContainer"] {
+        position: relative;
+        min-height: 100vh;
+        background: transparent;
+    }
+    
+    /* Fundo */
+    [data-testid="stAppViewContainer"]::before {
+        content: "";
+        position: fixed;
+        inset: 0;
+    
+        background-image: url("https://static.vecteezy.com/system/resources/thumbnails/023/402/460/original/watercolor-beautiful-floral-bloom-animation-of-colorful-flowers-banner-animated-4k-blooming-flowers-background-frame-loop-video.jpg");
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+    
+        z-index: -1;
+    }
+    
+    /* Mobile */
     @media (max-width: 768px) {
-        [data-testid="stAppViewContainer"] {
-            background-size: contain;
-            background-attachment: scroll;
-            background-color: #fff;
+        [data-testid="stAppViewContainer"]::before {
+            background-size: 100% auto;
+            background-position: top center;
         }
     }
     .st-key-messagem p   {
