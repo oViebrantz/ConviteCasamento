@@ -71,6 +71,12 @@ st.markdown("""
         background-repeat: no-repeat; 
         background-attachment: fixed; 
     }
+    @media (max-width: 768px) {
+    [data-testid="stAppViewContainer"] {
+        background-attachment: scroll;
+        background-size: cover;
+        }
+    }
     .st-key-messagem p   {
         background-color: #eba0d1;
         padding: 10px;
