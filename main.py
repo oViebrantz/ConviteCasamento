@@ -66,7 +66,7 @@ st.markdown("""
             
     [data-testid="stAppViewContainer"] {
         background-image: url("https://static.vecteezy.com/system/resources/thumbnails/023/402/460/original/watercolor-beautiful-floral-bloom-animation-of-colorful-flowers-banner-animated-4k-blooming-flowers-background-frame-loop-video.jpg");
-        background-size: 100%;
+        background-size: 125%;
         background-position: center;
         background-repeat: no-repeat; 
         background-attachment: fixed; 
