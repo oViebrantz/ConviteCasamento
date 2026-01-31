@@ -66,21 +66,13 @@ st.markdown("""
             
     html, body {
         width: 100%;
-        height: 100%;
+        min-height: 100%;
         margin: 0;
         padding: 0;
         overflow-x: hidden;
     }
     
-    /* Container principal do app */
-    [data-testid="stAppViewContainer"] {
-        position: relative;
-        min-height: 100vh;
-        background: transparent;
-    }
-    
-    /* Fundo */
-    [data-testid="stAppViewContainer"]::before {
+    body::before {
         content: "";
         position: fixed;
         inset: 0;
@@ -90,15 +82,21 @@ st.markdown("""
         background-position: center;
         background-size: cover;
     
-        z-index: -1;
+        z-index: -999;
+        pointer-events: none;
     }
     
-    /* Mobile */
     @media (max-width: 768px) {
-        [data-testid="stAppViewContainer"]::before {
+        body::before {
             background-size: 100% auto;
             background-position: top center;
         }
+    }
+    
+    [data-testid="stAppViewContainer"],
+    [data-testid="stMain"],
+    [data-testid="stApp"] {
+        background: transparent;
     }
     .st-key-messagem p   {
         background-color: #eba0d1;
